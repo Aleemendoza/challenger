@@ -1,12 +1,13 @@
 const fs = require('fs');
 const path = require('path');
-const db = require('../db.js');
+const db = require('../services/db.js');
 
 const basename = path.basename(__filename);
 const models = {};
 
-
 models.conn = db();
+
+
 
 fs.readdirSync(__dirname)
   .filter((file) => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))
@@ -17,4 +18,11 @@ fs.readdirSync(__dirname)
   });
 
 
+
+
+
+
+
 module.exports = models;
+
+
