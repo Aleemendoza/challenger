@@ -1,0 +1,35 @@
+version: "3"
+services:
+  
+  frontend:
+    container_name: SocketIO_Front_end
+    build:
+      context: ./cliente
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./cliente:/usr/src/app
+  
+  backend:
+    container_name: SocketIO_Back_end
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./api:/usr/src/app
+
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=henry
+      - MYSQL_PASSWORD=examenhenry123
+      - MYSQL_DATABASE=ema_base_municipalidad_pilar
+      - MYSQL_HOST=35.247.240.150
+    ports:
+      - 3354:3354
+    
+
