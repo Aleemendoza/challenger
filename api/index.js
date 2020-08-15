@@ -28,7 +28,8 @@ app.use(express.static('public'))
 
 initSocket(server);
 
-server.listen('3000', () => {
-	console.log('%s listening at 3000');
+server.listen('3001', () => {
+
+	console.log('backend corriendo en puerto 3001');
 
 	});
