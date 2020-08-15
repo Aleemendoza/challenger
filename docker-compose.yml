@@ -3,6 +3,7 @@ services:
   
   frontend:
     container_name: SocketIO_Front_end
+    stdin_open: true
     build:
       context: ./cliente
       dockerfile: Dockerfile
@@ -21,15 +22,13 @@ services:
     volumes:
       - ./api:/usr/src/app
 
-  mysql:
-    image: mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_USER=henry
-      - MYSQL_PASSWORD=examenhenry123
-      - MYSQL_DATABASE=ema_base_municipalidad_pilar
-      - MYSQL_HOST=35.247.240.150
-    ports:
-      - 3354:3354
+  # mysql:
+  #   image: mysql
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=root
+  #     - MYSQL_USER=henry
+  #     - MYSQL_PASSWORD=examenhenry123
+  #   ports:
+  #     - 3354:3354
     
 
