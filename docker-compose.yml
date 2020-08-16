@@ -22,13 +22,12 @@ services:
     volumes:
       - ./api:/usr/src/app
 
-  # mysql:
-  #   image: mysql
-  #   environment:
-  #     - MYSQL_ROOT_PASSWORD=root
-  #     - MYSQL_USER=henry
-  #     - MYSQL_PASSWORD=examenhenry123
-  #   ports:
-  #     - 3354:3354
+  mysql:
+    container_name: SocketIO_MySql
+    image: mysql
+    volumes:
+      - ./api/src/services/db.js:/usr/src/app
+    ports:
+      - "3306:3306"
     
 
