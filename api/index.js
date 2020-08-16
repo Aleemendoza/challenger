@@ -18,18 +18,14 @@
 
 
 
-const express = require('express');
-const app = express();
-const server = require('http').Server(app);
+const server = require('./src/services/app.js');
+const instanciaServer = require('http').Server(server);
 const {initSocket} = require('./src/services/socket.js')
 
 
-app.use(express.static('public'))
-
-initSocket(server);
-
 server.listen('3001', () => {
 
+	initSocket(instanciaServer);
 	console.log('backend corriendo en puerto 3001');
 
 	});

@@ -1,30 +1,28 @@
-// require('dotenv').config();
-// var mysql = require('mysql');
+
+
+require('dotenv').config();
+var mysql = require('mysql');
 
 // const {
 //   DB_USER, DB_PASSWORD, DB_HOST,
 // } = process.env;
 
 
-// function db() {
+function db() {
+  
 
-// return mysql.createConnection({
-//   host: {DB_HOST},
-//   user: {DB_USER},
-//   password: {DB_PASSWORD},
-//   database : 'ema_base_municipalidad_pilar'
+return conexion = mysql.createConnection({
+  host: '35.247.240.150',
+  user: 'henry',
+  password: 'examenhenry123',
+  database : 'ema_base_municipalidad_pilar'
+});
+  let client;
+  const conn = conexion.connect()
+    .then((c) => {
+      client = c;
+    });
+}
 
-// });
+module.exports = db;
 
-// conexion.connect(function(err) {
-//     if (err) {
-//         console.error('Error de conexion: ' + err.stack);
-//         return;
-//     }
-//     console.log('Conectado con el identificador ' + conexion.threadId);
-// });
-
-
-// }
-
-// module.exports = db;
