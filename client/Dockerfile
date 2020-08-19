@@ -4,8 +4,8 @@ RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
-EXPOSE 3001
+EXPOSE 3000
 
 COPY . .
 
-CMD [ "npm", "start"]
+CMD ["npm", "start"]
