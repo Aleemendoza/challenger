@@ -3,9 +3,9 @@
 require('dotenv').config();
 var mysql = require('mysql');
 
-// const {
-//   DB_USER, DB_PASSWORD, DB_HOST,
-// } = process.env;
+const {
+  DB_USER, DB_PASSWORD, DB_HOST,
+} = process.env;
 
 
 function db() {
