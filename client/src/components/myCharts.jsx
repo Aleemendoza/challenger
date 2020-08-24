@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
+import BarraNav from './barraNav.jsx'
 
 export default class LineChart extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ export default class LineChart extends Component {
           categories: ['A', 'B', 'C'],
         },
         series: [
-          { data: [1, 2, 3] }
+          { data: [2, 4, 6] }
         ],
         plotOptions: {
           series: {
@@ -40,7 +40,7 @@ export default class LineChart extends Component {
     this.setState({
       chartOptions: {
         series: [
-          { data: [Math.random() * 5, 2, 1]}
+          { data: [Math.random() * 8, 6, 4]}
         ]
       }
     });
@@ -50,16 +50,18 @@ export default class LineChart extends Component {
     const { chartOptions, hoverData } = this.state;
 
     return (
+
       <div>
+        <BarraNav />
+
         <HighchartsReact
           highcharts={Highcharts}
           options={chartOptions}
         />
       <h3>Hovering over {hoverData}</h3>
-      <button onClick={this.updateSeries.bind(this)}>Update Series</button>
+      <button onClick={this.updateSeries.bind(this)}>Cambiar Datos</button>
       </div>
     )
   }
 }
 
-render(<LineChart />, document.getElementById('root'));

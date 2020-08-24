@@ -7,13 +7,15 @@ import BotonFiltrar from '@material-ui/core/Button';
 
 export default function Filtrar(){
 
-const [setFechasDesde] = React.useState([]);
+const setFechasDesde = React.useState([]);
 	
 	React.useEffect(() => {
 
 		const fetchData = async () => {
 			const response = await axios.get('http://localhost:3001/fecha');
+			
 			setFechasDesde(response.data);
+		
 		};
 
 	 fetchData();
@@ -25,10 +27,10 @@ const [setFechasDesde] = React.useState([]);
 return (
  	<div className="bg-dark">
 
+ 		<h1> Boton Filtrar  </h1>
     </div>
 	)
 
 
 
 }
-

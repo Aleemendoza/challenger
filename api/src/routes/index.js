@@ -2,6 +2,8 @@ const { Router } = require('express');
 const express = require('express');
 const router = Router();
 const {obtener} = require('../controllers/index.js')
+const {fecha_desde} = require('../controllers/index.js')
+
 
 router.get('/', function (req, res) {
  
@@ -18,6 +20,7 @@ router.get('/', function (req, res) {
 router.get('/fecha', function(req, res){
 
 	fecha_desde()
+
 	.then( response => {
 		res.send(response)
 	})

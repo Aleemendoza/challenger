@@ -20,11 +20,11 @@ function obtener() {
 
 
 
-function fechaDesde(){
+function fecha_desde(){
 
 	return new Promise((resolve, reject) => {
 
-		connection.query(`SELECT fecha_desde FROM rutas`,
+		connection.query(`SELECT id, nombre, stock, precio FROM fechas_desde`,
 			(err, resultados) => {
 				if(err) reject(err);
 
@@ -36,6 +36,6 @@ function fechaDesde(){
 module.exports = {
 
 	obtener,
-	fechaDesde
+	fecha_desde
 
 }
