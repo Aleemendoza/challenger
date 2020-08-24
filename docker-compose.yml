@@ -5,12 +5,12 @@ services:
     container_name: SocketIO_Front_end
     stdin_open: true
     build:
-      context: ./cliente
+      context: ./client
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
-      - ./cliente:/usr/src/app
+      - ./client:/usr/src/app
   
   backend:
     container_name: SocketIO_Back_end
